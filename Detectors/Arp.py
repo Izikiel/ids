@@ -35,7 +35,7 @@ class ArpDetect(AttackDetect):
 
             if self.replies_count[source_mac] > self.request_threshold:
                 self.write_log(
-                    "ARP Spoofing Detected from MAC Address {}".format(
+                    "ARP Spoofing Detected from MAC Address {}\n".format(
                         source_mac)
                 )
         else:

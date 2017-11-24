@@ -69,7 +69,7 @@ class KrackDetect(AttackDetect):
         if self.ivs.is_iv_reused(pkt):
             iv = dot11_get_iv(pkt)
             seq = dot11_get_seqnum(pkt)
-            message = "IV reuse detected (IV={iv}, seq={seq}).\n Src={src}\tDst={dst}".format({
+            message = "IV reuse detected (IV={iv}, seq={seq}).\n Src={src}\tDst={dst}\n".format({
                 "iv": iv,
                 "seq": seq,
                 "src": pkt.psrc,
