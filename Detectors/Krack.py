@@ -58,6 +58,9 @@ class KrackDetect(AttackDetect):
         if WPA_key not in pkt:
             return
 
+        if Ether not in pkt:
+            return
+
         dst_mac = pkt[Ether].dst
         src_mac = pkt[Ether].src
 
