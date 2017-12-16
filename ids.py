@@ -23,5 +23,5 @@ def main(interface):
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Ingrese nombre de la interfaz a sniffear\n")
-        return
-    main(sys.argv[1])
+    else:
+        main(sys.argv[1])
