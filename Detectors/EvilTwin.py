@@ -6,7 +6,7 @@ class EvilTwinDetect(AttackDetect):
     def __init__(self, log_filename):
         super(EvilTwinDetect, self).__init__(log_filename)
         self.ssids = {}
-        self.message_template = "Detected duplicate ssid.\tSSID:{ssid} BSSID1:{bssid1} BSSID2:{bssid2}"
+        self.message_template = "Detected duplicate ssid.\tSSID:{ssid} BSSID1:{bssid1} BSSID2:{bssid2}\n"
 
     def analyze(self, pkt):
         if Dot11 not in pkt:
