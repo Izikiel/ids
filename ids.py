@@ -2,6 +2,7 @@ from scapy.all import sniff
 from Detectors.Arp import ArpDetect
 from Detectors.Deauth import DeauthDetect
 from Detectors.Krack import KrackDetect
+from Detectors.EvilTwin import EvilTwinDetect
 import sys
 
 
@@ -13,9 +14,10 @@ def analyze_packets(detectors, pkt):
 def main(interface):
     log_filename = "log_ids.txt"
     detectors = [
-        KrackDetect(log_filename),
-        DeauthDetect(log_filename),
-        ArpDetect(log_filename, interface)
+        # KrackDetect(log_filename),
+        # DeauthDetect(log_filename),
+        # ArpDetect(log_filename, interface),
+        EvilTwinDetect(log_filename)
     ]
     sniff(prn=lambda pkt: analyze_packets(detectors, pkt))
 
